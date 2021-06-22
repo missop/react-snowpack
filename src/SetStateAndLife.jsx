@@ -9,6 +9,8 @@ componentDidMount(){
     console.log("this.state.count是否会更新",this.state.count)
   },3000)
 }
+  // 主要看是否开启了批处理，如果是批处理则是异步更新，react事件中会调用batchedUpdate所以会异步处理更新，而定时器和promise、原生事件中都不会执行批处理，因此会同步更新state
+
   /*
   G:\QD\补丁班+STUDY\react-master\packages\react-reconciler\src\ReactUpdateQueue.new.js
        【异步】react事件监听回调中, setState()是异步更新状态
