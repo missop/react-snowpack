@@ -3,11 +3,21 @@ import React,{useState,useEffect,useMemo} from "react";
 // https://zhuanlan.zhihu.com/p/363905357
 // hooks render props HOC
 // render props 去渲染一个父子组件，但是子组件依赖于父组件的某些数据
+// HOC
 // 1. 属性代理
 // 2. 渲染劫持，根据props渲染哪个组件，例如loading 、
 // 3. 反向继承 super.render
-// 缺点：1。嵌套过深可读性、维护性差 2.原组件的静态方法失效
+// 缺点：1。嵌套过深可读性、维护性差 2.原组件的静态方法失效3. 重名覆盖
 // 优点：适合做插件
+// render props
+// 例如react-router的render props
+// 组件接收一个返回react元素的函数，将render的渲染逻辑注入到组件内部
+// 缺点：无法在return语句外访问数据，会造成组件嵌套
+// 优点：数据共享、代码复用、将组件内的state传递给调用者，将渲染逻辑交给调用者
+// hooks
+// 继承了ui=render（props）的函数式编程理念
+// 除了官方定义的hooks之外还能自定义hooks，例如ahooks
+// 优势：解决hoc的重名覆盖问题，也解决了hoc和render props的嵌套地狱问题
 
 /**
  * @description demo1 :属性代理
